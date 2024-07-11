@@ -198,56 +198,195 @@ Vehiculo(this.marca, this.anio);
 ## Ejercicios del 09 al 15:
 
 #### 09: Abstract class 
-- **Archivo:** [figura.dart](./Ejercicios del 09 al 15/abstract_class/bin/figura.dart)
+- **Archivo:** [figura.dart](./Ejercicios_del_09_al_15/abstract_class/bin/figura.dart)
 - **Evidencia:**
 ```dart
+abstract class Figura {
+  double calcularArea();
+}
+
+class Circulo extends Figura {
+  double radio;
+
+  Circulo(this.radio);
+
+  @override
+  double calcularArea() {
+    //pi * radio*radio
+    return 3.14 * radio * radio;
+  }
+}
+
+class Rectangulo extends Figura {
+  double ancho, alto;
+
+  Rectangulo(this.ancho, this.alto);
+
+  @override
+  double calcularArea() {
+    //ancho*alto
+    return ancho * alto;
+  }
+}
+
+void main() {
+  var c = Circulo(15);
+  var r = Rectangulo(3, 5);
+  print('Área del círculo: ${c.calcularArea()}');
+  print('Área del rectángulo: ${r.calcularArea()}');
+}
+
 ```
+
+![image](https://github.com/user-attachments/assets/0412b93a-6cd7-40f9-a36d-14803d0ee3b8)
+
 
 #### 10: Mixins 
-- **Archivo:**
+- **Archivo:** [mixins.dart](./Ejercicios_del_09_al_15/mixins/bin/mixins.dart)
 - **Evidencia:**
 ```dart
+mixin Volador {
+  void volar() {
+    print("Estoy volando");
+  }
+}
+
+mixin Corredor {
+  void correr() {
+    print("Estoy corriendo");
+  }
+}
+
+class Pajaro with Volador, Corredor {}
+
+void main() {
+  var pajaro = Pajaro();
+  pajaro.volar();
+  pajaro.correr();
+}
+
 ```
+![image](https://github.com/user-attachments/assets/990b9f29-ffa6-40e9-90b7-8cac597a7230)
 
 #### 11: Futures 
-- **Archivo:**
+- **Archivo:** [futures.dart](./Ejercicios_del_09_al_15/futures/bin/futures.dart)
 - **Evidencia:**
 ```dart
+void main() {
+  print("");
+  print("Inicio del programa");
+
+  Future(() {
+    return 'Hola mundo!';
+  }).then((resultado) {
+    print(resultado);
+  });
+
+  print("Fin del programa");
+}
+
 ```
+![image](https://github.com/user-attachments/assets/e2a9c82c-300a-4ad3-a654-c5e8c150b17f)
 
 #### 12: Async Await 
-- **Archivo:**
+- **Archivo:** [async_await.dart](./Ejercicios_del_09_al_15/futures/bin/async_await.dart)
 - **Evidencia:**
 ```dart
+void main() async {
+  print("Inicio del programa");
+
+  String resultado = await Future(() {
+    return "Hola mundo!";
+  });
+
+  print(resultado);
+  print('Fin del programa');
+}
 ```
+![image](https://github.com/user-attachments/assets/6cf0fd8d-3433-48a3-81aa-bd7366df8aa9)
 
 #### 13: Try catch finally 
-- **Archivo:**
+- **Archivo:** [try_catch.dart](./Ejercicios_del_09_al_15/try_catch/bin/try_catch.dart)
 - **Evidencia:**
 ```dart
+void main() {
+  try {
+    //int resultado = 10 ~/ 2; //Resultado
+    int resultado = 10 ~/ 0; //Error
+    print("El resultado es $resultado");
+  } catch (e, s) {
+    print("Se produjo una excepción $e");
+    print("Su descripción es $s");
+  } finally {
+    print("Procura no dividir entre cero");
+  }
+}
+
 ```
+![image](https://github.com/user-attachments/assets/8e48686c-505f-4c4c-8ee5-6f35ac624d9b)
 
 #### 14: Streams 
-- **Archivo:**
+- **Archivo:** [streams](./Ejercicios_del_09_al_15/streams/bin/streams.dart)
 - **Evidencia:**
 ```dart
+void main() {
+  Stream<int> stream =
+      Stream<int>.periodic(Duration(seconds: 1), (count) => count)
+          .take(5); //Stream.periodic
+  stream.listen((data) => print('Data recibida: $data'));
+
+  Stream<int> otroStream = Stream.fromIterable([6, 7, 8, 9, 10]);
+  otroStream.listen((data) {
+    print("Data recibida: $data");
+  });
+}
+
 ```
+![image](https://github.com/user-attachments/assets/71992e9b-a01a-4381-b8e3-54c91700ad60)
 
 #### 15: Stream await 
-- **Archivo:**
+- **Archivo:** [azync_await_streams](./Ejercicios_del_09_al_15/streams/bin/azync_await_streams.dart)
 - **Evidencia:**
 ```dart
+
+void main() async {
+  Stream<int> stream =
+      Stream.periodic(Duration(seconds: 1), (contador) => contador)
+          .take(5); //Stream periodic
+  await for (var data in stream) {
+    print("Data recibida: $data");
+  }
+}
+
 ```
+![image](https://github.com/user-attachments/assets/3e5189d1-ec5b-440d-91e0-1bbf618c99f8)
 
 ## Aplicaciones
   
 #### Aplicación HelloWorld 
-- **Archivo:**
-- **Código:**
+- **Directorio:** [Hello Word](./hello_world_01)
 - **Evidencia:**
+  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8b722568-3dc7-424c-8ac3-0f7af54dd815" alt="Image 1" width="30%">
+  <img src="https://github.com/user-attachments/assets/6800d571-388e-41f1-9c6f-3997c126ee1d" alt="Image 2" width="30%">
+  <img src="https://github.com/user-attachments/assets/44a2533d-7667-489e-bd09-3ebb6cd9f06f" alt="Image 3" width="30%">
+</p>
+
 
 #### Aplicación YesOrNo 
-- **Archivo:**
-- **Código:**
+- **Directorio:** [Yes No APP](./jstr_yes_no_app)
 - **Evidencia:**
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e2c8013a-f308-40e8-a4a0-884650c32600" alt="Image 1" width="45%">
+  <img src="https://github.com/user-attachments/assets/e3d2eae7-efc6-46de-aded-158e8661f719" alt="Image 2" width="45%">
+</p>
+
+#### Aplicación ddi_phone 
+- **Directorio:** [Phone APP](./ddi_phone)
+- **Evidencia:**
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c143732c-6811-4547-a5e1-71061a190335" alt="Image 1" width="45%">
+</p>
