@@ -3,13 +3,13 @@ import 'package:dark_basic_01/dark_fuctions.dart';
 
 //Declarar funcion principal.
 void main() {
-  for (var i = 0; i <= 10; i++) {
+  for (var i = 0; i <= 4; i++) {
     saludar();
   }
 
   var funcionSaludo = saludar;
   int i = 0;
-  while (i < 10) {
+  while (i < 4) {
     funcionSaludo();
     i++;
   }
