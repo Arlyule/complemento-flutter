@@ -2,46 +2,120 @@
 ## Ejercicios del 01 al 04:
 
 #### 01: Hello World 
-- **Archivo:**
-- **Código:**
+- **Archivo:** [hello_word.dart](./dark_basic_01/lib/hello_word.dart)
 - **Evidencia:**
+ ```dart
+  void main() {
+  String name = "Julio Samuel Torres Reyes";
+  String Grupo = "GIDS4093";
+  print("Hola, $name! \n del $Grupo");
+  }
+  ```
+  ![image](https://github.com/Arlyule/complemento-flutter/assets/105952154/117aa24f-058e-446b-b9ab-158e053f3619)
 
 #### 02: Variables 
-- **Archivo:**
-- **Código:**
+- **Archivo:** [dark_basic_01.dart](./dark_basic_01/bin/dark_basic_01.dart)
 - **Evidencia:**
+ ```dart
+  int contador;
+  String nombre;
+  double nota;
+  bool isAdulto;
+
+  //Asignar Valores
+  contador = 0;
+  nombre = "MAria";
+  nota = 8.5;
+  isAdulto = true;
+ ```
 
 #### 03: Maps 
-- **Archivo:**
-- **Código:**
+- **Archivo:**  [dart_iterables.dart](./dark_basic_01/bin/dart_iterables.dart)
 - **Evidencia:**
+```dart
+  // * Crear un mapa
+  Map<String, int> verduras = {
+    "Cilantro": 1,
+    "Zanahoria": 3,
+    "Apio": 5,
+    "Coliflor": 2
+  };
+  print(verduras);
+```
 
 #### 04: List, maps and Iterables 
-- **Archivo:**
-- **Código:**
+- **Archivo:** [dart_iterables.dart](./dark_basic_01/bin/dart_iterables.dart)
 - **Evidencia:**
+```dart
+- void main(List<String> arguments) {
+  // * Declarar lista
+  var numeros = [1, 3, 6, 8, 7];
+  // * Recorrer la lista para imprimir los valores
+  for (var i in numeros) {
+    print(i);
+  }
+  // * Recorrer la lista para imprimir los valores X2
+  print("Recorriendo con ForEach");
+  numeros.forEach((i) => print(i));
+
+  // * Añadir valores a la lista
+  numeros.add(5);
+  print(numeros);
+
+  // * Remover valore
+  numeros.remove(8);
+  print(numeros);
+
+  // * Crear un mapa
+  // ! var verduras = {"Cilantro": 1, "Zanahoria": 3, "Apio": 5, "Coliflor": 2};
+  // ! print(verduras);
+
+  // * Crear un mapa
+  Map<String, int> verduras = {
+    "Cilantro": 1,
+    "Zanahoria": 3,
+    "Apio": 5,
+    "Coliflor": 2
+  };
+  print(verduras);
+
+  verduras.remove("Zanahoria");
+  print(verduras);
+
+  verduras["Papas"] = 8;
+  print(verduras);
+
+  for (var verdura in verduras.entries) {
+    print("${verdura.key}: ${verdura.value}");
+  }
+}
+```
 
 ## Ejercicios del 05 al 08:
 
 #### 05: Functions 
 - **Archivo:**
-- **Código:**
 - **Evidencia:**
+```dart
+```
 
 #### 06: Classes 
 - **Archivo:**
-- **Código:**
 - **Evidencia:**
+```dart
+```
 
 #### 07: Constructors and names 
 - **Archivo:**
-- **Código:**
 - **Evidencia:**
+```dart
+```
 
 #### 08: get and set 
 - **Archivo:**
-- **Código:**
 - **Evidencia:**
+```dart
+```
 
 ## Ejercicios del 09 al 15:
 
